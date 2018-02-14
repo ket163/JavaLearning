@@ -11,26 +11,82 @@ public class InteractRunner {
 
             Calculator calculator = new Calculator();
             String exit = "no";
+            System.out.println("Choose an a operation: + - / * " + "Or type exit to leave the programm");
+            String operation = scanner.next();
 
-        while (!exit.equals("yes")) {
+            switch (operation) {
 
-            System.out.println("Enter first number : ");
-            String first = scanner.next();
-            System.out.println("Enter second number : ");
-            String second = scanner.next();
-            System.out.println("Enter second number : ");
-            String third = scanner.next();
-            calculator.sum(Integer.valueOf(first),Integer.valueOf(second),Integer.valueOf(third));
+                case "+":
+                    while (!exit.equals("yes")) {
 
-            System.out.println("The result is : " + calculator.getResult());
-            calculator.cleanResult();
-            System.out.println("Exit?  yes/no ");
-            exit = scanner.next();
+                        System.out.println("Enter first number : ");
+                        String first = scanner.next();
+                        System.out.println("Enter second number : ");
+                        String second = scanner.next();
+
+                        calculator.plus(Integer.valueOf(first), Integer.valueOf(second));
+
+                        System.out.println("The result is : " + calculator.getResultPlus());
+                        calculator.cleanResult();
+                        System.out.println("Exit?  yes/no ");
+                        exit = scanner.next();
+
+                    }
+                case "-":
+                    while (!exit.equals("yes")) {
+
+                        System.out.println("Enter first number : ");
+                        String first = scanner.next();
+                        System.out.println("Enter second number : ");
+                        String second = scanner.next();
+
+                        calculator.minus(Integer.valueOf(first), Integer.valueOf(second));
+
+                        System.out.println("The result is : " + calculator.getResultMinus());
+                        calculator.cleanResult();
+                        System.out.println("Exit?  yes/no ");
+                        exit = scanner.next();
+
+
+                    }
+                case "*":
+                    while (!exit.equals("yes")) {
+
+                        System.out.println("Enter first number : ");
+                        String first = scanner.next();
+                        System.out.println("Enter second number : ");
+                        String second = scanner.next();
+
+                        calculator.multiply(Integer.valueOf(first), Integer.valueOf(second));
+
+                        System.out.println("The result is : " + calculator.getResultMultiply());
+                        calculator.cleanResult();
+                        System.out.println("Exit?  yes/no ");
+                        exit = scanner.next();
+
+
+                    }
+                case "/":
+                    while (!exit.equals("yes")) {
+
+                        System.out.println("Enter first number : ");
+                        String first = scanner.next();
+                        System.out.println("Enter second number : ");
+                        String second = scanner.next();
+
+
+                        calculator.divide(Integer.valueOf(first), Integer.valueOf(second));
+
+
+                        calculator.cleanResult();
+                        System.out.println("Exit?  yes/no ");
+                        exit = scanner.next();
+                    }
+
+            }
 
         }
-
-        }
-
 
     }
+
 }

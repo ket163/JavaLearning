@@ -6,7 +6,7 @@ public class Calculator {
     private int result;
 
 
-    public void sum(int[] params) {
+    public void sum(int ... params) {
         for (int param : params) {
             result = result + param;
         }
